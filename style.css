@@ -58,6 +58,7 @@ table {
     --main-color:#3F5D45;
     --main-size:8px;
     --base-color:#EAF0ED; 
+    --btn--color: white;   
     --font-size:8px; 
 }
 body{
@@ -75,7 +76,7 @@ body{
     padding-bottom: 30px;
 } 
 .header img{
-    height: 40px;
+    height: calc(var(--font-size) * 3);
 }
 .container{
     width: 940px;
@@ -121,8 +122,12 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: white;
+    background:var(--btn--color);
     color: var(--main-color);
     text-decoration: none;
     box-sizing: border-box;
+}
+.aside li a:hover{
+    background: var(--base-color);  
+
 }
