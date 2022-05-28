@@ -101,6 +101,10 @@ body{
 .banner a{
     height: 496px;
 }
+.aside{
+    width: 300px;
+    font-size: calc(var(--font-size) * 3);
+}
 .aside h2{
     height: 65px;
     display: flex;
@@ -110,10 +114,6 @@ body{
     color: var(--base-color);
     text-decoration: none;
     box-sizing: border-box;
-}
-.aside ul{
-    width: 300px;
-    /* font-size: calc(var(--font-size)*5); */
 }
 .aside li a{
     height: 65px;
