@@ -85,6 +85,7 @@ body{
     /* 讓logo跟文字並排用 */
     justify-content: space-between;
 }
+
 .h1 {
     height: 40px;
 }
@@ -99,6 +100,9 @@ body{
     color: var(--main-color);
     font-size: calc(var(--font-size) * 2);
   }
+.menu a:hover{
+    background: var(--base-color);
+}
 .banner a{
     height: 496px;
 }
@@ -127,15 +131,15 @@ body{
     text-decoration: none;
     box-sizing: border-box;
 }
+
 .aside li a:hover{
     background: var(--base-color);  
-
 }
 /* 以下為右半邊區域 */
 .productList{
     display: flex;
     flex-wrap: wrap;
-    justify-content: between;
+    justify-content: space-between;
     margin-left: 20px;
 }
 
@@ -144,10 +148,6 @@ body{
     height: 436px;
     margin-bottom: 20px;
     position: relative;
-}
-
-.productListCard{
-    
 }
 
 .productList tag{
@@ -171,9 +171,60 @@ body{
     width: 20px;
 }
 
+
+.productListCard{
+    margin-bottom: 20px;
+}
+
 .productListCardBody{
     position: absolute;
     top: 315px;
     display: flex;
     color:var(--main-color)
+}
+
+.productListCardBody h2{
+    font-size: calc(var(--font-size)*2.5);
+    width: 173px;
+    height: 56px;
+    box-sizing:border-box;
+    border: 1px solid var(--base-color);
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.productListCardBody span{
+    font-size: calc(var(--font-size)*2.5);
+    width: 127px;
+    height: 56px;
+    border: 1px solid var(--base-color);
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.productListCardBody a {
+    font-size: calc(var(--font-size)*3);
+    color:var(--sub-color);
+    position: absolute;
+    width: 300px;
+    height: 65px;
+    top: 56px;
+    display: flex;
+    text-align: center;
+    justify-content: center; 
+    text-decoration: none;
+    background: var(--main-color);
+    align-items: center;
+    border: 1px solid var(--main-color);
+}
+
+.productListCardBody a:hover{
+    color:var(--main-color);
+    background: var(--sub-color);
+    border: 1px solid var(--main-color);
 }
