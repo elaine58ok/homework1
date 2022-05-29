@@ -103,12 +103,22 @@ body{
 .menu a:hover{
     background: var(--base-color);
 }
+.menu img{
+    width: calc(var(--main-size)*3);
+    height: calc(var(--main-size)*3);
+}
 .banner a{
     height: 496px;
+    padding-bottom: 30px;
+}
+
+.mean{
+    padding-top :30px;
 }
 .aside{
     width: 300px;
     font-size: calc(var(--font-size) * 3);
+
 }
 .aside h2{
     height: 65px;
@@ -174,7 +184,7 @@ body{
 
 .productListCard{
     margin-bottom: 20px;
-    font-weight: lighter;
+    
 }
 
 .productListCardBody{
