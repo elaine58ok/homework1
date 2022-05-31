@@ -94,6 +94,10 @@ body{
     /* 讓文字之間自己並排 */
     align-items: center;
 }
+.menu ul{
+    width: 320px;
+    justify-content: space-between;
+}
 .menu a {
     text-decoration: none;
     padding: 10px 30px;
@@ -106,6 +110,11 @@ body{
 .menu img{
     width: calc(var(--main-size)*3);
     height: calc(var(--main-size)*3);
+}
+
+/* 購物車icon跟登入文字間距79px */
+.menu li img{
+    padding-left :49px;
 }
 .banner a{
     height: 496px;
