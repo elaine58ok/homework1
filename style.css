@@ -74,6 +74,7 @@ body{
 .header{
     padding-top: 30px;
     padding-bottom: 30px;
+    justify-content: space-between;
 } 
 .header img{
     height: calc(var(--font-size) * 5);
@@ -83,7 +84,7 @@ body{
     margin: 0 auto;
     display: flex;
     /* 讓logo跟文字並排用 */
-    justify-content: space-between;
+    /* justify-content: space-between;不是每一個都需要，所以移除 */
 }
 
 .h1 {
@@ -124,34 +125,37 @@ body{
 .mean{
     padding-top :30px;
 }
-.aside{
-    width: 300px;
-    font-size: calc(var(--font-size) * 3);
 
-}
-.aside h2{
-    height: 65px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background:  var(--main-color);
-    color: var(--sub-color);
-    text-decoration: none;
+
+* {
+    /* 免除盒模型計算 */
     box-sizing: border-box;
+   }
+.asideNav{
+    font-size: calc(var(--font-size) * 3);
+    text-align: center;
+    text-decoration: none;
 }
-.aside li a{
-    height: 65px;
+.asideNav h2{
+    background: var(--main-color);
+    color: var(--sub-color);
+    padding: 20px 0;
     width: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background:var(--sub-color);
+}
+/* 
+1.把h2拿到ul外
+2.不要設定固定高度，改用padding來推高度
+*/
+.asideNav li a{
+    padding: 19.5px 0;
+    display: block;
+    background: var(--sub-color);
     color: var(--main-color);
     text-decoration: none;
-    box-sizing: border-box;
+    border: 1px solid var(--sub-color);
 }
 
-.aside li a:hover{
+.asideNav li a:hover{
     background: var(--base-color);  
 }
 /* 以下為右半邊區域 */
