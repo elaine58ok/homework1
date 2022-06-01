@@ -46,12 +46,6 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
-*,
-*::before
-*::afer{
-    box-sizing: border-box
-}
 /* 以上為css reset  */
 /* 通用設定 */
 :root{
@@ -65,12 +59,34 @@ body{
     font-family:PingFang TC;
     font-weight: bold;
 }
-/* *,
-*::before,
-*::after {
-  box-sizing: border-box;
-} */
-/* 以下為基礎樣式 */
+/* 通用 */
+* {
+    /* 免除盒模型計算 */
+    box-sizing: border-box;
+   }
+.h1 {
+    height: 40px;
+}
+
+p{
+    text-align: center;
+}
+h3{
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    font-size: calc(var(--font-size)*2.5) ;
+    color:var(--main-color);
+    text-align: center;
+}
+
+img{
+    display: block;
+}
+
+/* Header開始 */
 .header{
     padding-top: 30px;
     padding-bottom: 30px;
@@ -86,10 +102,6 @@ body{
     /* 讓logo跟文字並排用 */
     /* justify-content: space-between;不是每一個都需要，所以移除 */
 }
-
-.h1 {
-    height: 40px;
-}
 .menu{
     display: flex;
     /* 讓文字之間自己並排 */
@@ -100,7 +112,6 @@ body{
     justify-content: space-between;
 }
 .menu a {
-    text-decoration: none;
     padding: 10px 30px;
     color: var(--main-color);
     font-size: calc(var(--font-size) * 2);
@@ -108,33 +119,21 @@ body{
 .menu a:hover{
     background: var(--base-color);
 }
-.menu img{
-    width: calc(var(--main-size)*3);
-    height: calc(var(--main-size)*3);
-}
-
-/* 購物車icon跟登入文字間距79px */
 .menu li img{
+    height: calc(var(--main-size)*3);
     padding-left :49px;
 }
-.banner a{
+/* 購物車icon跟登入文字間距79px*/
+
+.banner {
     height: 496px;
-    padding-bottom: 30px;
 }
-
 .mean{
-    padding-top :30px;
+    padding-top :60px;
 }
-
-
-* {
-    /* 免除盒模型計算 */
-    box-sizing: border-box;
-   }
 .asideNav{
     font-size: calc(var(--font-size) * 3);
     text-align: center;
-    text-decoration: none;
 }
 .asideNav h2{
     background: var(--main-color);
@@ -146,12 +145,12 @@ body{
 1.把h2拿到ul外
 2.不要設定固定高度，改用padding來推高度
 */
+
 .asideNav li a{
     padding: 19.5px 0;
     display: block;
     background: var(--sub-color);
     color: var(--main-color);
-    text-decoration: none;
     border: 1px solid var(--sub-color);
 }
 
@@ -164,15 +163,26 @@ body{
     flex-wrap: wrap;
     justify-content: space-between;
     margin-left: 20px;
+
 }
 
-.productList li{
+/* .productList li{
     width: 300px;
     height: 436px;
     margin-bottom: 20px;
     position: relative;
-}
-
+} */
+.tag {
+    /* 文字直書 */
+    writing-mode: vertical-lr;
+    position: absolute;
+    padding: 10px;
+    letter-spacing: 3px;
+    left: 20px;
+    top: 0;
+    color: var(--sub-color);
+    background: var(--main-color);
+   }
 .productList tag{
     position: absolute;
     left: 20px;
@@ -187,17 +197,22 @@ body{
     line-height: 1.2;
 }
 
-.favorite{
-    left: 258px;
+.favorite {
+    right: 22px;
     top: 19px;
     position: absolute;
-    width: 20px;
-}
-
-
-.productListCard{
+   }
+.productListCard {
     margin-bottom: 20px;
-    
+    position: relative;
+   }
+.productListCardBody {
+    display: flex;
+    color: var(--main-color);
+   }
+
+/* .productListCard{
+    margin-bottom: 20px; 
 }
 
 .productListCardBody{
@@ -205,9 +220,9 @@ body{
     top: 315px;
     display: flex;
     color:var(--main-color)
-}
+} */
 
-.productListCardBody h2{
+/* .productListCardBody h2{
     font-size: calc(var(--font-size)*2.5);
     width: 173px;
     height: 56px;
@@ -217,9 +232,15 @@ body{
     text-align: center;
     justify-content: center;
     align-items: center;
-}
+} */
+.productListCardBody h3 {
+    padding: 14px 0;
+    font-size: calc(var(--font-size) * 2.5);
+    width: 173px;
+    border: 1px solid var(--base-color);
+   }
 
-.productListCardBody span{
+/* .productListCardBody p{
     font-size: calc(var(--font-size)*2.5);
     width: 127px;
     height: 56px;
@@ -229,11 +250,17 @@ body{
     justify-content: center;
     box-sizing: border-box;
     align-items: center;
-}
+} */
+.productListCardBody p {
+    padding: 14px 0;
+    font-size: calc(var(--font-size) * 2.5);
+    width: 127px;
+    border: 1px solid var(--base-color);
+   }
 
-.productListCardBody a {
+/* .productListCardBody a {
     font-size: calc(var(--font-size)*3);
-    color:var(--sub-color);
+    color:var(--main-color);
     position: absolute;
     width: 300px;
     height: 65px;
@@ -241,14 +268,52 @@ body{
     display: flex;
     text-align: center;
     justify-content: center; 
-    text-decoration: none;
-    background: var(--main-color);
+    background: var(--base-color);
     align-items: center;
-    border: 1px solid var(--main-color);
+    border: 1px solid var(--base-color);
 }
 
 .productListCardBody a:hover{
-    color:var(--main-color);
+    color:var(--sub-color);
+    background: var(--main-color);
+    border: 1px solid var(--main-color);
+} */
+
+.addbtn {
+    display: block;
+    padding: 16px 0;
+    font-size: calc(var(--font-size) * 3);
+    color: var(--main-color);
+    text-decoration: none;
+    background: var(--base-color);
+    border: 1px solid var(--base-color);
+    text-align: center;
+   }
+   
+.addbtn:hover {
+    color: var(--main-color);
     background: var(--sub-color);
     border: 1px solid var(--main-color);
+   }
+   
+/* 分頁使用 */
+.page {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;    
 }
+.page a{
+    display: flex;
+    width: 60px;
+    height: 60px;
+    justify-content: center;
+    outline: 1px solid var(--base-color);
+    margin-top: 26px;
+    align-items: center;
+    border: 1 solid var(--base--color);
+}
+
+.page a:hover {
+    background-color:var(--main-color);
+    color: var(--sub-color);
+  }
