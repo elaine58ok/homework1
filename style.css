@@ -64,7 +64,7 @@ body{
     /* 免除盒模型計算 */
     box-sizing: border-box;
    }
-.h1 {
+h1 {
     height: 40px;
 }
 
@@ -91,6 +91,7 @@ img{
     padding-top: 30px;
     padding-bottom: 30px;
     justify-content: space-between;
+    align-items: center;
 } 
 .header img{
     height: calc(var(--font-size) * 5);
@@ -151,7 +152,8 @@ img{
     display: block;
     background: var(--sub-color);
     color: var(--main-color);
-    border: 1px solid var(--sub-color);
+    border: 1px solid var(--base-color);
+
 }
 
 .asideNav li a:hover{
@@ -301,14 +303,14 @@ img{
     display: flex;
     justify-content: flex-end;
     align-items: center;    
+    margin-top: 26px;
 }
 .page a{
     display: flex;
-    width: 60px;
     height: 60px;
+    padding: 24px;
     justify-content: center;
     outline: 1px solid var(--base-color);
-    margin-top: 26px;
     align-items: center;
     border: 1 solid var(--base--color);
 }
